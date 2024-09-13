@@ -29,18 +29,18 @@ class NumeroComplejo:
     def conjugado(self):
         return NumeroComplejo(self.real, -self.imaginario)
 
-    # Método de Newton para la raíz cuadrada sin usar math.sqrt()
+
     def raiz_cuadrada(self, x, tolerancia=0.0001):
         raiz = x / 2.0
         while abs(raiz * raiz - x) > tolerancia:
             raiz = (raiz + x / raiz) / 2.0
         return raiz
 
-    # Calcular magnitud sin abs()
+   
     def magnitud(self):
         return self.raiz_cuadrada(self.real**2 + self.imaginario**2)
 
-    # Aproximación de arctan sin usar math.atan()
+ 
     def arctan_approx(self, y, x):
         if x == 0 and y == 0:
             return 0
@@ -49,7 +49,7 @@ class NumeroComplejo:
         elif y == 0:
             return 0 if x > 0 else 180
         
-        # Aproximación simple de arctan basada en relación entre y y x
+
         approx = y / x
         if x > 0:
             return approx / (1 + 0.28 * approx * approx) * 45  # Aproximación simple de atan
